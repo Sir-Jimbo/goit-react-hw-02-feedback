@@ -1,10 +1,11 @@
+import s from './FeedbackOptions.module.css';
 import PropTypes from 'prop-types';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => (
-   <div >
+   <div className={s.buttonList}>
       { options.map(option => (
          <button key={option} type="button" onClick={() => onLeaveFeedback(option)}>
-            {option}
+            {option.slice(0, 1).toLocaleUpperCase() + option.slice(1)}
          </button>
       ))}
    </div >

@@ -1,0 +1,10 @@
+button:not(:last-child) {
+   margin-right: 10px;
+}
+
+button:hover,
+button:focus {
+   background-color: blue;
+   color: white;
+   cursor: pointer;
+}
