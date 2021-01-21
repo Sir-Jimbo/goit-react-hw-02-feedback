@@ -25,7 +25,10 @@ class Expresso extends Component {
    }
 
    countTotalFeedback = () => {
-      return Object.values(this.state).reduce((acc, value) => acc + value, 0);
+      return (
+         Object.values = this.state.good + this.state.neutral + this.state.bad
+      )
+      //Object.values(this.state).reduce((acc, value) => acc + value, 0);
    }
    countPositiveFeedbackPercentage = () => {
       const countPercentage = Math.round(100 * (this.state.good / this.countTotalFeedback()));
@@ -34,8 +37,14 @@ class Expresso extends Component {
          : 0;
    }
 
-   render() {
+   upperCaseFeedbackOptions = (option) => {
+      return (Object.values = option.slice(0, 1).toLocaleUpperCase() + option.slice(1)
+      )
+   }
 
+
+   render() {
+      const feedbackOptions = Object.keys(this.state);
       const total = this.countTotalFeedback();
       const positivePercentage = this.countPositiveFeedbackPercentage();
 
@@ -43,8 +52,9 @@ class Expresso extends Component {
          <>
             <Section title="Please leave feedback">
                <FeedbackOptions
-                  options={Object.keys(this.state)}
+                  options={feedbackOptions}
                   onLeaveFeedback={this.leaveFeedback}
+                  onUpperCaseFeedbackOptions={this.upperCaseFeedbackOptions}
                />
             </Section>
             <Section title="Statistics">

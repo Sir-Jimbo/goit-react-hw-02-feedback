@@ -1,4 +1,4 @@
-import Expresso from './components/EspressoApp/Expresso/Expresso'
+import Expresso from './components/Expresso/Expresso'
 
 export default function App() {
   return (
